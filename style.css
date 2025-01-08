@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-size: 40px;
+    padding: 2rem 2rem 0 ;
+}
+
+h2 {
+    color: #fff;
+    display: block;
+}
+
+p {
+    padding: 0 2rem 0.8rem;
+}
+p:nth-child(3){
+    display: none;
+    
+}
+strong {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/*error effect shown to the user when the input field is empty */
+.error {
+    transition: 0.2s;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+/* The form where the user can add tasks */
+.task{
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    align-items: center;
+    padding: 3rem 0.1rem;
+    margin: 6rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.115);
+}
+
+#submit {
+    width: 25%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+.clickAnimation {
+    transform: scale(1,1);  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.485);
+}
+
+.task input {
+    width: 350px;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+/* Where the list of tasks added by the user will be displayed */
+.btn{
+    display: block;
+    padding: 1rem;
+    margin: 10% 20%;
+    background-color: #333;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.485);
+   
+    li {
+        width: 100%;
+        padding: 0.8rem;
+        margin: 0.5rem 0;
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #000;
+        cursor: pointer;
+    }
+
+    #icons {
+        display: inline;
+        float: right;
+    }
+
+    i {
+        width: 20%;
+        padding: 0.8rem 0 0.8rem;
+        margin: 0 0.2rem 0 ;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+/* This is where i made the website responsive */
+@media  (max-width: 609px) {
+    p:nth-child(1) {
+        display: none;
+        transition: 0.2s;
+    }
+
+    p:nth-child(2) {
+        display: none;
+        transition: 0.2s;
+    }
+
+    p:nth-child(3){
+        display: block;
+        transition: 0.2s; 
+        flex-wrap: nowrap;
+    }
+
+    .task {
+        padding: 7% 0;
+        margin: 15% 10% 10%;
+        transition: 0.2s;
+    }
+
+    .task input{
+        width: 60%;
+        transition: 0.2s;
+    }
+}
+
+@media (max-width: 703px) {
+
+    .btn {
+        margin: 10% ;
+        transition: 0.2s;
+    }
+}
+
+@media (min-width:900px){
+
+    .task {
+        padding: 3rem 0.1rem;
+        margin: 8% 20%;
+        transition: 0.2s;
+    }
+}
