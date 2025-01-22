@@ -1,5 +1,6 @@
 const inputTask = document.querySelector('#task');
 const submitbtn = document.querySelector('#submit');
+const searchInput = document.querySelector('#search');
 
 
 
@@ -25,23 +26,15 @@ submitbtn.addEventListener('click', function() {
    }else {
     //create a new list item to store values from the user
     const li = document.createElement('li');
-    // let counter = 0;
-   li.appendChild(document.createTextNode(inputTask.value));
-    document.querySelector('ul').appendChild(li);
+    li.contentEditable = true;
     li.innerHTML = `${inputTask.value} <div id="icons"><abbr title="Edit"><i class="bi bi-pencil-square"></i></abbr><abbr title="Delete"><i class="bi bi-trash3"></i></abbr></div>`;
-    // while (li) {
-    //     li++ ;
-    //     console.log(li);
-        
+    document.querySelector('ul').appendChild(li);
     inputTask.value = '';
+   
 
    }
 });
- 
-// const taskText = document.createElement('span');
-// taskText.contentEditable = true;
-// taskText.textContent = task.text;
-// taskText.style
+
 
 //function to remove a task
 function removeTask(e) {
@@ -58,15 +51,12 @@ function editTask(e) {
     if(e.target.classList.contains('bi-pencil-square')) {
         const edit = prompt('Edit task');
         e.target.parentElement.parentElement.parentElement.firstChild.textContent = edit;
-        // li.innerHTML = `<input type="text" value="${inputTask.value}" id="edit"><button id="save">Save</button>`;
-        // inputTask.appendChild(li);
     }
 }
 document.querySelector('ul').addEventListener('click', editTask);
 
 // function to search for a task
 function searchTask() {
-    const searchInput = document.querySelector('#search');
     const filter = searchInput.value.toLowerCase();
     const tasks = document.querySelectorAll('ul li');
 

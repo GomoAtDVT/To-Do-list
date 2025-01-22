@@ -50,6 +50,7 @@ header div{
     background-color: rgb(234, 234, 234);
     border-radius: 2rem;
 }
+/* search  */
 header input{
     padding: 10px 20px;
     border: 1px solid transparent;
@@ -178,6 +179,14 @@ header button:hover {
 
     .task input{
         width: 60%;
+        transition: 0.2s;
+    }
+    header input{
+        width: 60%;
+        transition: 0.2s;
+    }
+    header button{
+        width: 20%;
         transition: 0.2s;
     }
 }
